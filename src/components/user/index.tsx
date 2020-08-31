@@ -11,9 +11,17 @@ export interface UserInterface {
 type UserProps = { user: UserInterface }
 
 export default function User({ user }: UserProps) {
+  const userCmpStyle = {
+    display: 'flex',
+    margin: '15px',
+    backgroundColor: 'white',
+    maxWidth: '500px',
+    padding: '5px',
+    borderRadius: '5px'
+  }
   return (
-    <div style={{ display: 'flex', margin: '2.5%' }}>
-      <img src={user.avatar} alt={'Foto do usuario: '+user.first_name}></img>
+    <div style={userCmpStyle}>
+      <img src={user.avatar} alt={'Foto do usuario: ' + user.first_name}></img>
       <div style={{ marginLeft: '2.5%' }}>
         <h3>Name: {user.first_name} {user.last_name}</h3>
         <h3>Email: {user.email}</h3>
